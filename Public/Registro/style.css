@@ -1,0 +1,26 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#Inicio{
+    width: 100%;
+    height: 640px;
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    grid-template-columns: 100%;
+}
+
+#Cabecera{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 200px 200px 1fr;
+    grid-template-rows: 100%;
+}
+
+#Registrar, #Mostrar{
+    border: 1px solid rgb(68, 68, 68);
+    text-align: center;
+}
+

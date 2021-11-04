@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Control de Acceso</title>
+</head>
+<body>
+    <video id="qr-video" style="width: 0px;"></video>
+    <div id="Seccion-Lector"></div> <br>
+    Selecciona la camara
+    <select id="cam-list">
+        <option value="environment" selected>Environment Facing (default)</option>
+        <option value="user">User Facing</option>
+    </select>
+    <br>
+    <b>Datos Obtenidos: </b><br>
+    <span id="cam-qr-result">None</span>
+    <br>
+</body>
+<script src="./main.js" type="module"></script>
+</html>

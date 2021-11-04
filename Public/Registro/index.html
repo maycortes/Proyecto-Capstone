@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>Registro</title>
+</head>
+<body>
+    <div id="Inicio">
+<!-- *************************************************************************************** -->
+        <div id="Cabecera">
+            <div id="Registrar" class="opcion"> Registro </div>
+            <div id="Mostrar" class="opcion"> Visualizador </div>
+        </div>
+<!-- *************************************************************************************** -->
+        <div id="PaginaRegistro" style="display: none;">
+            <label for="nombreFamiliar">Nombre(s) del Familiar</label> <input type="text" name="nombreFamiliar" id="nombreFamiliar"> <br>
+            <label for="apellido1Familiar">Primer Apellido del Familiar</label> <input type="text" name="apellido1Familiar" id="apellido1Familiar"> <br>
+            <label for="apellido2Familiar">Primer Apellido del Familiar</label> <input type="text" name="apellido2Familiar" id="apellido2Familiar"> <br>
+            <label for="telefono1">Telefono 1</label> <input type="text" name="telefono1" id="telefono1"> <br>
+            <label for="telefono2">Telefono 2</label> <input type="text" name="telefono2" id="telefono2"> <br>
+            <label for="correo">Correo Electronico</label> <input type="email" name="correo" id="correo"> <br>
+            <label for="direccion">Direccion</label> <input type="text" name="direccion" id="direccion"> <br> 
+            <br>
+            <label for="nombrePaciente">Nombre(s) del Familiar</label> <input type="text" name="nombrePaciente" id="nombrePaciente"> <br>
+            <label for="apellido1Paciente">Primer Apellido del Familiar</label> <input type="text" name="apellido1Paciente" id="apellido1Paciente"> <br>
+            <label for="apellido2Paciente">Primer Apellido del Familiar</label> <input type="text" name="apellido2Paciente" id="apellido2Paciente"> <br>
+            <label for="NSS">NSS</label> <input type="text" name="NSS" id="NSS"> <br>
+            <button type="button" id="btn">Enviar</button>
+        </div>
+<!-- *************************************************************************************** -->
+        <div id="PaginaMostrar">
+            <label for="buscarPDF">Buscar Expediente</label> <input type="text" name="buscarPDF" id="buscarPDF">
+            <button id="Buscar">Buscar</button> <button id="Limpiar">Limpiar</button> <br>
+            <!-- <embed src="/124578.pdf" type="application/pdf" width="80%" height="600px" /> -->
+        </div>
+<!-- *************************************************************************************** -->
+    </div>
+</body>
+<script src="./main.js"></script>
+</html>

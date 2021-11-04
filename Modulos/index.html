@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <div id="pageHeader" style="border-bottom: 2px solid rgb(44, 44, 44); margin: 0px 35px 0px 35px;">
+        <table>
+            <tr>
+                <td> <img src="data:image/png;base64,{{imss}}" style="width: 65px;"> </th>
+                <td>
+                    <p> 
+                        INSTITUTO MEXICANO DE SEGURO SOCIAL <br>
+                        Hospital General De Zona 27 <br>
+                        Prol, Lerdo 311, Tlatelolco, Cuauhtémoc, 06900 Ciudad de México, CDMX
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin: 0px 35px 0px 35px; border-bottom: 2px solid rgb(44, 44, 44);">
+        <table style="width: 100%;" >
+            <tr><th colspan="2"> Datos del Familiar </th></tr>
+            <tr><td>Nombre del Familiar: {{nombreFamiliar}}</td><td>Telefono 2: {{telefono2}}</td></tr>
+            <tr><td>Apellidos del Familiar: {{apellido1Familiar}} {{apellido2Familiar}}</td><td>Telefono 1: {{telefono1}}</td></tr>
+            <tr><td></td><td>CorreoElectronico: {{correo}}</td></tr>
+        </table>
+    </div>
+
+    <div style="margin: 0px 35px 0px 35px; border-bottom: 2px solid rgb(44, 44, 44);">
+        <table style="width: 100%;" >
+            <tr><th colspan="2"> Datos del Paciente </th></tr>
+            <tr><td>Nombre del Paciente: {{nombrePaciente}}</td><td>NSS: {{NSS}}</td></tr>
+            <tr><td>Apellidos del Paciente: {{apellido1Paciente}} {{apellido2Paciente}}</td><td>Piso: {{piso}}</td></tr>
+            <tr><td></td><td>Numero de cama: {{numeroCama}}</td></tr>
+        </table>
+    </div>
+    
+    <div style="margin: 0px 35px 0px 35px; width: 100%;">
+        <h3> Codigo QR para videollamada </h3>
+        <img src="{{QR}}" style="width: 200px; margin: auto;">
+    </div>
+
+    <div id="pageFooter" style="background-color: rgb(9, 99, 61); width: 100%; height: 50px;">
+    </div>
+
+</body>
+</html>

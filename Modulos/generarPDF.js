@@ -8,8 +8,8 @@ const pdf = require('html-pdf');
 const generarQR = require('./generarQR');
 
 const nombreDatos = [ 
-    "nombreFamiliar" , "apellido1Familiar" , "apellido2Familiar" , "telefono1" , "telefono2" , "correo" , "direccion" ,
-    "nombrePaciente" , "apellido1Paciente" , "apellido2Paciente" , "NSS"
+    "nombreF" , "apellido1F" , "apellido2F" , "telefono1" , "telefono2" , "correo" , "direccion",
+    "nombreP" , "apellido1P" , "apellido2P" , "NSS" , "numeroCama" , "numeroPiso"
 ];
 
 // Funcion que permite crear un PDF
@@ -28,10 +28,14 @@ exports.crearPDF = async function ( datos ){
         agregar = agregar + datos[x] +",";
     });
 
-    await generarQR.GenerarQR(agregar).then( (codigoQR) => {
+    try {
+        let codigoQR = await generarQR.GenerarQR(agregar);
         html = html.replace( "{{QR}}" , codigoQR );
-        pdf.create( html , { format: 'Letter' } ).toFile('./Documentos_PDF/' + datos["NSS"] + ".pdf", (err,res) => {
+        await pdf.create( html , { format: 'Letter' } ).toFile('./Documentos_PDF/' + datos["NSS"] + ".pdf", (err,res) => {
             console.log( err ? err : res );
         });
-    });
+        return datos["NSS"];
+    } catch (error) {
+        console.log( error );
+    }
 }

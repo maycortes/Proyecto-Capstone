@@ -4,23 +4,208 @@ body{
 }
 
 #Inicio{
-    width: 100%;
-    height: 640px;
+    width: 1180px;
+    height: auto;
+    margin: auto;
     display: grid;
-    grid-template-rows: 40px 1fr;
     grid-template-columns: 100%;
+    grid-template-rows: 50px 1fr;
+    font-family: sans-serif;
 }
 
-#Cabecera{
+#Menu{
+    background-color: rgb(9, 87, 48);
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 200px 200px 1fr;
+    grid-template-columns: 1fr 220px 220px 1fr;
     grid-template-rows: 100%;
 }
 
-#Registrar, #Mostrar{
-    border: 1px solid rgb(68, 68, 68);
-    text-align: center;
+#Registrar{
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    display: grid;
 }
 
+#Visualizar{
+    width: 100%;
+    height: 100%;
+    grid-column: 3;
+    display: grid;
+}
+
+#Contenedor_btn{
+    width: 100%;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    color: aliceblue;
+    font-size: 15px;
+}
+
+#Pagina_Registrar{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 270px 200px 70px;
+}
+
+#Seccion_Familiar , #Seccion_Paciente , #Seccion_Enviar{
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+#Formulario_Familiar{
+    width: 85%;
+    height: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4 , 1fr);
+    border: 1px solid rgb(67, 58, 58);
+    border-radius: 8px;
+}
+
+#Formulario_Paciente{
+    width: 85%;
+    height: 85%;
+    border: 2px solid #262626;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3 , 1fr);
+    border: 1px solid rgb(67, 58, 58);
+    border-radius: 8px;
+}
+
+.Titulo{
+    width: 95%;
+    height: 20px;
+    margin: auto;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.ContenedorTriple{
+    grid-column: span 3;
+    display: grid;
+}
+
+.ContenedoresInput{
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+.ElementosInput{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    position: relative;
+    display: grid;
+}
+
+input{
+    width: 100%;
+    height: 60%;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 0px;
+    border-bottom: 1.5px solid rgb(9, 87, 48);
+}
+
+label{
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    color: #838383;
+    font-size: 14px;
+}
+
+input:valid + label{
+    top: 0px;
+    left: 0px;
+    font-size: 11px;
+    color: #0e0d0d;
+    font-weight: 750;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+input:invalid + label{
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+input:focus{
+    outline: none;
+    background: none;
+    border-bottom: 4px solid rgb(9, 87, 48);
+}
+
+#Contenedor_Btn_Enviar{
+    margin: auto;
+    width: 120px;
+    height: 30px;
+}
+
+#Enviar, #Limpiar, #Buscar{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(9, 87, 48);
+    color:aliceblue;
+    border-radius: 5px;
+    border: none;
+}
+
+/* ******************************************************************* */
+#Pagina_Visualizar{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 130px 430px;    
+}
+
+#Seccion_Buscar{
+    display: grid;
+    grid-template-columns: 3fr repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+#Seccion_Buscar, #Seccion_Documento_PDF{
+    width: 80%;
+    height: 88%;
+    margin: auto;
+    border: 1.5px solid rgb(67, 58, 58);
+    border-radius: 8px;
+}
+
+#Contenedor_Buscar, #Contenedor_Limpiar{
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+#Contenedor_Btn_Buscar, #Contenedor_Btn_Limpiar{
+    width: 70%;
+    height: 50%;
+    display: grid;
+    margin: auto;
+}
+
+#Registrar:hover , #Visualizar:hover{
+    background-color: rgba(32, 133, 66, 0.836);
+}
+
+#Enviar:hover, #Limpiar:hover, #Buscar:hover{
+    background-color: rgba(32, 133, 66, 0.836);
+}
+
+#Mensaje_Espera{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}

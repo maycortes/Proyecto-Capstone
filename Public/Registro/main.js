@@ -1,59 +1,103 @@
-let PaginaRegistro = document.getElementById("PaginaRegistro");
-let PaginaMostrar = document.getElementById("PaginaMostrar");
+let paginaRegistrar = document.getElementById("Pagina_Registrar");
+let paginaVisualizar = document.getElementById("Pagina_Visualizar");
 
-document.getElementById("Registrar").onclick = () => {
-    PaginaRegistro.style.display = null;
-    PaginaMostrar.style.display = "none";
+document.getElementById("Registrar").onclick = function(){
+    paginaRegistrar.style.display = null;
+    paginaVisualizar.style.display = "none";
+    LimpiarVisualizador();
 }
 
-document.getElementById("Mostrar").onclick = () => {
-    PaginaMostrar.style.display = null;
-    PaginaRegistro.style.display = "none";
+document.getElementById("Visualizar").onclick = function(){
+    paginaRegistrar.style.display = "none";
+    paginaVisualizar.style.display = null;
 }
-/************************************************************************** */
-document.getElementById("btn").onclick = function () {
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST','https://192.168.1.67:3000/CrearPDF',false);
-    xhr.setRequestHeader("Content-type","application/json");
-    xhr.onload = function (){
-        if(xhr.status == 200){
-            //MostrarDocumentoPDF( JSON.parse(xhr.responseText) );
-            alert( `El archivo PDF fue creado con el nombre ${JSON.parse(xhr.responseText).nombrePDF}` );
-        }else{
-            alert( "Ocurrio un error" );
-        }
+/***************************************************** */
+let nombrePDF = document.getElementById("nombrePDF");
+let visualizador = document.getElementById("Seccion_Documento_PDF");
+let archivoPDF = null;
+
+document.getElementById("Buscar").onclick = function(){
+    if( nombrePDF.value != "" ){
+       MostrarArchivo( nombrePDF.value );
+       nombrePDF.value = "";
+    }else{
+        alert( "¡Escribe el nombre del PDF!" );
     }
-    xhr.send( JSON.stringify( obtenerDatos() ) );
+}
+/***************************************************** */
+document.getElementById("Limpiar").onclick = LimpiarVisualizador;
+
+function LimpiarVisualizador(){
+    if( archivoPDF != null ){
+        visualizador.removeChild( archivoPDF );
+        archivoPDF = null;
+        nombrePDF.value = "";
+    }
+}
+
+function LimpiarInputs(){
+    let nombreInputs = [
+        "nombreF" , "apellido1F" , "apellido2F" , "telefono1" , "telefono2" , "correo" , "direccion",
+        "nombreP" , "apellido1P" , "apellido2P" , "NSS" , "numeroCama" , "numeroPiso"
+    ];
+    nombreInputs.forEach( x => {
+        document.getElementById(x).value = "";
+    });
+}
+
+function MostrarArchivo( nombreArchivo ){
+    let url = 'https://192.168.1.67:3000/MostrarPDF';
+    let data = { "nombrePDF" : nombreArchivo };
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers:{'Content-Type': 'application/json'
+        }
+      }).then(res => res.json() )
+      .catch(error => console.error('Error:', error))
+      .then( dato => {
+        archivoPDF = document.createElement("object");
+        archivoPDF.data = "data:application/pdf;base64," + dato.dato;
+        archivoPDF.type="application/pdf";
+        archivoPDF.style.width = "100%";
+        archivoPDF.style.height = "100%";
+        visualizador.appendChild( archivoPDF );
+      });
+}
+/*************************************************************************** */
+let Enviar = document.getElementById("Enviar");
+let mensajeEspera = document.getElementById("Mensaje_Espera");
+Enviar.onclick = function(){
+    Enviar.style.display = "none";
+    mensajeEspera.style.display = null;
+    let url = 'https://192.168.1.67:3000/CrearPDF';
+    let data = obtenerDatos();
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers:{'Content-Type': 'application/json'
+        }
+      }).then(res => res.json() )
+      .catch(error => console.error('Error:', error))
+      .then( dato => {
+        console.log( dato.nombrePDF );
+        Enviar.style.display = null;
+        mensajeEspera.style.display = "none";
+        paginaRegistrar.style.display = "none";
+        paginaVisualizar.style.display = null;
+        nombrePDF.value = dato.nombrePDF;
+      });
 }
 
 function obtenerDatos(){
-    let datos = {};
-    let nombreInputs = [ 
-        "nombreFamiliar" , "apellido1Familiar" , "apellido2Familiar" , "telefono1" , "telefono2" , "correo" , "direccion" ,
-        "nombrePaciente" , "apellido1Paciente" , "apellido2Paciente" , "NSS"
+    let nombreInputs = [
+        "nombreF" , "apellido1F" , "apellido2F" , "telefono1" , "telefono2" , "correo" , "direccion",
+        "nombreP" , "apellido1P" , "apellido2P" , "NSS" , "numeroCama" , "numeroPiso"
     ];
-    nombreInputs.forEach( (x) => {
+    let datos = {};
+    nombreInputs.forEach( x => {
         datos[x] = document.getElementById(x).value;
     });
+    LimpiarInputs();
     return datos;
 }
-
-let archivoPDF;
-
-/******************************************************************** */
-document.getElementById("Buscar").onclick = () => {
-    let buscarPDF = document.getElementById("buscarPDF").value;
-    archivoPDF = document.createElement("embed");
-    archivoPDF.type = "application/pdf";
-    archivoPDF.src = "/" + buscarPDF + ".pdf";
-    archivoPDF.style.width = "70%";
-    archivoPDF.style.height = "400px";
-    PaginaMostrar.appendChild(archivoPDF);
-    document.getElementById("buscarPDF").value = "";
-}
-/*********************************************************************** */
-document.getElementById("Limpiar").onclick = () => {
-    PaginaMostrar.removeChild( archivoPDF );
-    archivoPDF = null;
-};
-/*********************************************************************** */

@@ -20,16 +20,13 @@ exports.crearPDF = async function ( datos ){
     // Se combierte una imagen en base 64
     let imgIMSS = Dep.fs.readFileSync( Dep.path.join( __dirname , "Imagenes" , "imss.png" ) , 'base64' );
 
-    let agregar = "";
-
     html = html.replace( "{{imss}}" , imgIMSS );
     nombreDatos.forEach( ( x ) => {
         html = html.replace( `{{${x}}}` , datos[x] );
-        agregar = agregar + datos[x] +",";
     });
 
     try {
-        let codigoQR = await generarQR.GenerarQR(agregar);
+        let codigoQR = await generarQR.GenerarQR(JSON.stringify( datos ));
         html = html.replace( "{{QR}}" , codigoQR );
         await pdf.create( html , { format: 'Letter' } ).toFile('./Documentos_PDF/' + datos["NSS"] + ".pdf", (err,res) => {
             console.log( err ? err : res );

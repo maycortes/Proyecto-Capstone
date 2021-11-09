@@ -132,3 +132,10 @@ canvas{
     width: 100%;
     height: 100%;
 }
+
+#Pagina_Acceso{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 500px;
+}

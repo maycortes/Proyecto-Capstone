@@ -1,0 +1,134 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+#Inicio{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 1fr;
+    font-family: sans-serif;
+}
+
+#Menu{
+    background-color: rgb(9, 87, 48);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 220px 220px 1fr;
+    grid-template-rows: 100%;
+}
+
+#Entrada{
+    width: 100%;
+    height: 100%;
+    grid-column: 2;
+    display: grid;
+}
+
+#Salida{
+    width: 100%;
+    height: 100%;
+    grid-column: 3;
+    display: grid;
+}
+
+#Contenedor_btn{
+    width: 100%;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+#Pagina_Principal{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 500px;
+}
+
+.Titulo{
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+.Contenedor_Titulo{
+    width: 90%;
+    height: 25px;
+    font-size: 25px;
+    margin: auto;
+}
+
+.Contenido{
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+.Contenedor_Contenido{
+    width: 95%;
+    height: 95%;
+    margin: auto;
+    border-radius: 7px;
+    border: 1.5px solid #868686;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 85% 15%;
+}
+
+.Seccion_Lector{
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+.Seccion_Opciones{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 40% 60%;
+}
+
+.Contenedor_Lector{
+    width: 30%;
+    height: 80%;
+    margin: auto;
+    display: grid;
+}
+
+.Titulo_Opciones{
+    width: 95%;
+    height: 18px;
+    font-size: 18px;
+    margin: auto;
+    display: grid;
+}
+
+.Contenedor_Opciones{
+    width: 40%;
+    height: 65%;
+    margin: auto;
+    display: grid;
+}
+
+#cam-list {
+    font-family: sans-serif;
+    font-size: 17px;
+}
+
+#cam-list:focus {
+    outline: none;
+    font-family: sans-serif;
+}
+
+canvas{
+    width: 100%;
+    height: 100%;
+}

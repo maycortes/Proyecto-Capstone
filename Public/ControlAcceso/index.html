@@ -2,20 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
     <title>Control de Acceso</title>
 </head>
 <body>
-    <video id="qr-video" style="width: 0px;"></video>
-    <div id="Seccion-Lector"></div> <br>
-    Selecciona la camara
-    <select id="cam-list">
-        <option value="environment" selected>Environment Facing (default)</option>
-        <option value="user">User Facing</option>
-    </select>
-    <br>
-    <b>Datos Obtenidos: </b><br>
-    <span id="cam-qr-result">None</span>
-    <br>
+    <div id="Inicio">
+        <!-- *************************************************************************** -->
+        <div id="Menu">
+            <div id="Entrada"> <div id="Contenedor_btn">Entrada</div> </div>
+            <div id="Salida"> <div id="Contenedor_btn">Salida</div> </div>
+        </div>
+        <!-- *************************************************************************** -->
+        <div id="Pagina_Principal">
+            <div class="Titulo">
+                <div class="Contenedor_Titulo"> Control de Entrada </div>
+            </div>
+            <div class="Contenido">
+                <div class="Contenedor_Contenido">
+                    <div class="Seccion_Lector">
+                        <div class="Contenedor_Lector">
+                            <video id="qr-video" style="width: 0px;"></video>
+                            <div id="Lector"></div>
+                        </div>
+                    </div>
+                    <div class="Seccion_Opciones">
+                        <div class="Titulo_Opciones">
+                            Selecciona la camara:
+                        </div>
+                        <div class="Contenedor_Opciones">
+                            <select id="cam-list">
+                                <option value="environment" selected>Camara Trasera (por defecto)</option>
+                                <option value="user">Camara Frontal</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- *************************************************************************** -->
+        <div id="Pagina_Acceso" style="display: none;">
+            <div id="cam-qr-result"></div>
+        </div>
+    </div>
 </body>
 <script src="./main.js" type="module"></script>
 </html>

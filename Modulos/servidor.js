@@ -16,6 +16,13 @@ Dep.app.use(Dep.express.static(Dep.path.join(__dirname, '..')));
 ///Documentos estaticos
 Dep.app.use('/Registro', Dep.express.static(Dep.path.join(__dirname, '..', 'Public', 'Registro')));
 Dep.app.use('/ControlAcceso', Dep.express.static(Dep.path.join(__dirname, '..', 'Public', 'ControlAcceso')));
+Dep.app.use('/Paciente', Dep.express.static( Dep.path.join( __dirname , '..' , 'Public' , 'Paciente' ) ));
+
+//Dirección de motor de plantilla
+Dep.app.set( 'views' , Dep.path.join( __dirname , '..' , 'Public' , 'Sala' ) );
+
+//Motor de plantilla
+Dep.app.set( 'view engine' , 'ejs' );
 
 //Middleware que analiza archivos urlencoded en solicitudes post
 Dep.app.use(Dep.express.urlencoded({ extended: true }));
@@ -36,6 +43,27 @@ Dep.app.post('/MostrarPDF', (req, res) => {
   } else {
     console.log("El archivo NO EXISTE!");
     res.send(JSON.stringify({ "Dato": "No Existe" }));
+  }
+});
+
+//Documentos dinamicos con ejs
+Dep.app.post( '/:id' , (req,res) => {
+  if( req.body.persona == "familiar" ){
+      res.render( 'index' , {
+          miNombre : req.body.nombreFamiliar + " " + req.body.apellidosFamiliar,
+          familiarNombre : req.body.nombrePaciente + " " + req.body.apellidosPaciente,
+          url : req.body.url,
+          regresar : `https://${Dep.app.get('address')}:${Dep.app.get('port')}/Familiar`
+      });
+  }else if( req.body.persona == "paciente" ){
+      res.render( 'index' , {
+          miNombre : req.body.miNombre,
+          familiarNombre : req.body.nombreFamiliar,
+          url : req.body.url,
+          regresar : `https://${Dep.app.get('address')}:${Dep.app.get('port')}/Paciente`
+      });
+  }else{
+      res.send('¡O no!, la página a la que deceas acceder no existe');
   }
 });
 

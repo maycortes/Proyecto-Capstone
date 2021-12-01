@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./Modulos/socket.js"
+    "start": "node ./Modulos/socket.js",
+    "dev": "node ./Modulos/Servidor.js"
   },
   "keywords": [],
   "author": "",

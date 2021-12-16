@@ -8,7 +8,7 @@ exports.fs = require('fs');
 exports.https = require('https');
 
 // Modulo MYSQL que permite realizar conexion y consultas a la BD
-exports.mysql = require('mysql');
+exports.mariadb = require('mariadb');
 
 //Módulo para crear aplicaciones Web y API.
 //Express es un marco de aplicaciones web de Back-end para Node.js

@@ -2,9 +2,9 @@ const {fs,path} = require('./Dependencias');
 
 // Datos para la conexion con la BD
 exports.conexion = {
-    host     : '192.168.1.67',
-    user     : 'JoseEduardo',
-    password : 'eduardo112233',
+    host     : '192.168.1.66',
+    user     : 'root',
+    password : 'root',
     database : 'hospital'
 }
 

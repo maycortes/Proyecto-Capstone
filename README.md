@@ -44,22 +44,3 @@ Ejecutar el Sistema:
 ```
 npm start
 ```
-
-Página para Control de Acceso:
-
-```
-# Direccion URL
-https://{direccion ip}:{puerto}/ControlAcceso/ 
-
-# Por default 
-https://192.168.1.67:3000/ControlAcceso/ 
-```
-
-Página para realizar el Registro:
-```
-# Direccion URL
-https://{direccion ip}:{puerto}/Registro/ 
-
-# Por default 
-https://192.168.1.67:3000/Registro/ 
-```

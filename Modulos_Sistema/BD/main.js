@@ -24,10 +24,9 @@ exports.obtenerAcceso = async function ( {matricula,pwd,seccion} ){
 }
 
 // Funcion que permite almacenar un usuario ( paciente y visitante )
-exports.almacenarUsuario = async function ( data ) {
-    data.idUsu = 0;
+exports.almacenarUsuario = async function ( dato ) {
     let conn = await pool.getConnection();
-    return await conn.query( consultas.almacenarUsuario , data )
+    return await conn.query( convertirConsulta( consultas.almacenarUsuario , dato ) )
         .then( res =>{ return { insercion : true , id : res.insertId } })
         .catch( error => {  console.log(error);  return { insercion : false } })
 }
@@ -52,8 +51,8 @@ exports.consultarEntrada = async function ( id ){
 // Funcion para almacenar fecha y hora de entrada
 exports.almacenarEntrada = async function ( id ){
     let conn = await pool.getConnection();
-    let data = { idReg : 0 , Fecha : fechaActual() , HoraEntrada : horaActual() , idUsu : id , HoraSalida : "00:00:00" }
-    return await conn.query( consultas.almacenarEntrada , data )
+    let data = { Fecha : fechaActual() , HoraEntrada : horaActual() , idUsu : id , HoraSalida : "00:00:00" }
+    return await conn.query( convertirConsulta( consultas.almacenarEntrada , data ) )
         .then( res => { return { insercion : true } } )
         .catch(error => { return { insercion : false } });
 }
@@ -90,4 +89,12 @@ exports.datosSalaVideollama = async function ( id ){
     return await conn.query( consultas.datosSalaVideollama , [ id ] )
         .then( res => res )
         .catch(error => { return [] });
+}
+
+// Funcion para colocar datos a la consulta de insercion
+function convertirConsulta( consulta , datos ){
+    Object.keys(datos).forEach( x => {
+        consulta = consulta.replace( `{{${x}}}` , datos[x] );
+    });
+    return consulta;
 }

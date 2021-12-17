@@ -128,8 +128,6 @@ exports.crearPDF = async function (req, res) {
             res.send(JSON.stringify({ existencia: false }));
         }
     } catch (error) {
-		log("Error en Funcion Servidor, crearPDF")
-		console.log( error );
         res.send(JSON.stringify({ existencia: false }));
     }
 }

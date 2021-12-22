@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visitante</title>
+</head>
+<body>
+    <h1>Visitante</h1>
+    <video id="qr-video" style="width: 0px;"></video> 
+    <br>
+    <div id="Lector"></div> 
+    <br>
+    Selecciona la camara: 
+    <br>
+    <select id="cam-list">
+        <option value="environment" selected>Camara Trasera (por defecto)</option>
+        <option value="user">Camara Frontal</option>
+    </select>
+    <form method="post" style="display: none;" id="datosSala">
+        <input type="text" name="regreso">
+        <input type="text" name="nombreLocal">
+        <input type="text" name="nombreRemoto">
+        <input type="text" name="url">
+    </form>
+</body>
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script src="/ArchivosVisitante/Script/main.js" type="module"></script>
+</html>

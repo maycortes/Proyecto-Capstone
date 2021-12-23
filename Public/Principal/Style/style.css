@@ -1,0 +1,159 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+#Inicio{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+}
+
+#Header{
+    width: 100%;
+    height: 100%;
+    background-color: #333F50;
+}
+
+#Header > div{
+    line-height: 3;
+    color: rgb(255, 255, 255);
+    font-weight: 550;
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+#Contenido{
+    width: 100%;
+    height: 500px;
+    display: grid;
+}
+
+#Contenedor{
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    box-shadow: 0px 5px 10px 4px rgba(0,0,0,0.62);
+    -webkit-box-shadow: 0px 5px 10px 4px rgba(0,0,0,0.62);
+    -moz-box-shadow: 0px 5px 10px 4px rgba(0,0,0,0.62);
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+#Titulo{
+    background-color: #333F50;
+    border-radius: 10px 10px 0px 0px;
+}
+
+#Titulo > div{
+    color: rgb(255, 255, 255);
+    line-height: 3;
+    font-size: 25px;
+    text-align: center;
+}
+
+#Formulario{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(4,25%);
+}
+
+#Formulario > div{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+.Celda{
+    position: relative;
+}
+
+label{
+    position: absolute;
+    top: 34px;
+    left: 35px;
+    color: #838383;
+    font-size: 16px;
+}
+
+input{
+    margin-top: 30px;
+    width: 90%;
+    height: 20px;
+    padding: 1% 4% 1% 4%;
+    box-sizing: content-box;
+    border: 0px;
+    border-bottom: 1px solid #333F50;
+}
+
+input:valid + label{
+    top: 15px;
+    left: 0px;
+    font-size: 11px;
+    color: #333F50;
+    font-weight: 750;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+input:invalid + label{
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+input:focus{
+    outline: none;
+    background: none;
+    border-bottom: 4px solid #333F50;
+}
+
+#seccion{
+    width: 100%;
+    height: 50%;
+    background-color: #333F50;
+    color: aliceblue;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#seccion:focus{ 
+    outline: none;
+}
+
+option{
+    background-color: #425d80;
+    text-align: center;
+    font-size: 14px;
+}
+
+option:hover{
+    background-color: #657891;
+}
+
+#Contenedor_btn{
+    width: 80%;
+    height: 100%;
+    display: grid;
+}
+
+#ingresar{
+    background-color: #333F50;
+    color: aliceblue;
+    width: 40%;
+    height: 50%;
+    margin: auto;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+}
+
+#ingresar:hover{
+    background-color: #607086;
+}

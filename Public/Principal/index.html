@@ -2,20 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Style/style.css">
     <title>Principal</title>
 </head>
 <body>
-    <h1>Principal</h1>
-    <form id="Formulario">
-        <label for="matricula">Matricula</label> <input type="text" name="matricula" id="matricula"> <br>
-        <label for="pwd">Contraseña</label> <input type="password" name="pwd" id="pwd"> <br>
-        <label for="seccion">Seccion</label> <input type="text" name="seccion" id="seccion"> <br>
-        <button type="button" id="enviar">Enviar</button>
-    </form>
+
+    <div id="Inicio">
+        <div id="Header"> <div>Principal</div> </div>
+        <div id="Contenido">
+            <div id="Contenedor">
+                <div id="Titulo"> <div>Iniciar Sesión</div> </div>
+                <form id="Formulario">
+                    <div>
+                        <div class="Celda"> <input type="text" name="matricula" id="matricula" required><label for="matricula">Escribe la Matricula</label></div>
+                    </div>
+                    <div>
+                        <div class="Celda"> <input type="password" name="pwd" id="pwd" required><label for="pwd">Escribe la Contraseña</label></div>
+                    </div>
+                    <div>
+                        <select name="seccion" id="seccion">
+                            <option selected disabled>Sección</option>
+                            <option value='0' >Registro</option>
+                            <option value='1' >Entrada</option>
+                            <option value='2' >Salida</option>
+                            <option value='3' >Visitante</option>
+                            <option value='4' >Paciente</option>
+                        </select>
+                    </div>
+                    <div id="Contenedor_btn">
+                        <button type="button" id="ingresar">Ingresar</button>
+                        <div id="mensanje" style="display: none; text-align: center; height: 30px; margin-top: 30px;">Espere por favor ...</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <form style="display: none;" id="acceso" method="post">
         <input type="text" name="codigo">
     </form>
+
 </body>
-<script src="./main.js"></script>
+<script src="./Script/main.js" type="module"></script>
 </html>

@@ -1,0 +1,10 @@
+
+input:focus{
+    outline: none;
+    background: none;
+    border-bottom: 4px solid #333F50;
+}
+
+#ingresar:hover{
+    background-color: #607086;
+}

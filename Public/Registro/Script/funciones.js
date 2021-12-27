@@ -27,13 +27,20 @@ export function moverLabel(e){
 
 // funciones para el boton enviar formulario
 export function enviarFormularioUsuario(){
+    ids.btn_enviar.style.display = 'none';
+    ids.mensaje_espera.style.display = null;
     let data = {};
     for (let i = 0; i < 13; i++) {
         data[ ids.seccion_almacenador[ i ].name ] = ids.seccion_almacenador[ i ].value;
     }
     fetch('../CrearPDF', { method: 'POST', body: JSON.stringify(data), headers:{'Content-Type': 'application/json' } })
         .then( res => res.json() )
-        .then( res => { limpiarEntradasInputsAlmacenador(); mostrarArchivoPDF( res ); })
+        .then( res => { 
+            ids.btn_enviar.style.display = null;
+            ids.mensaje_espera.style.display = 'none';
+            limpiarEntradasInputsAlmacenador(); 
+            mostrarArchivoPDF( res ); 
+        })
         .catch(error => console.error('Error:', error))
 }
 

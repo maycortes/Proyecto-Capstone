@@ -14,9 +14,9 @@ exports.obtenerAcceso = async function ( {matricula,pwd,seccion} ){
     let conn = await pool.getConnection();
     return await conn.query( consultas.consultarAdm , [ matricula , pwd , codeServer ] )
     .then( ( adm ) => {
-        return (adm.length == 1) ? conn.query( consultas.consultarEnc , [ adm[0].idAdm , seccion+1 ] ) : [];
+        return (adm.length == 1) ? conn.query( consultas.consultarEnc , [ adm[0].idAdm , seccion ] ) : [];
     }).then( ( sec ) => {
-        return (sec.length > 0 && sec[0].idSec == seccion+1) ? { acceso : true , seccion : seccion+1 } : { acceso : false };
+        return (sec.length > 0 && sec[0].idSec == seccion) ? { acceso : true , seccion : seccion } : { acceso : false };
     }).catch( (error) => {
         console.log(error);
         return { acceso : false };

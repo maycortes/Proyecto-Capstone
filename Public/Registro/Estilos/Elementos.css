@@ -1,0 +1,41 @@
+label{
+    position: absolute;
+}
+
+.titulo_label_arriba{
+    top: 0px;
+    left: 0px;
+    color: #333F50;
+    font-size: 12px;
+    font-weight: 520;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+.titulo_label_abajo{
+    top: 17px;
+    left: 10px;
+    color: #838383;
+    font-size: 16px;
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+input{
+    margin-top: 15px;
+    width: 90%;
+    height: 20px;
+    padding: 0% 4% 0.5% 4%;
+    box-sizing: content-box;
+    border: 0px;
+    border-bottom: 1px solid #333F50;
+}
+
+button{
+    width: 100%;
+    height: 100%;
+    background-color: #333F50;
+    border-radius: 7px;
+    color: aliceblue;
+    border: none;
+}

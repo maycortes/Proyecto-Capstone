@@ -1,14 +1,17 @@
-// Formulario que contiene informacion del Paciente y Visitante
-export const UsuarioFormulario = document.getElementById('UsuarioFormulario');
-// Formulario que contiene el nombre del archivo PDF
-export const ArchivoFormulario = document.getElementById('ArchivoFormulario');
+// Seccion Contenedores
+export let seccion_almacenador = document.getElementById('Almacenador')  // <-- Es el formulario para crear el PDF
+export let seccion_visualziador = document.getElementById('Visualizador')
 
-// Boton que envia el formulario con datos del Paciente y Visitante
-export const btnEnviar = document.getElementById('btnEnviar');
-// Boton que envia el nombre del archivo PDF
-export const btnMostrar = document.getElementById('btnMostrar');
-// Boton que limpia input del nombre del archivo PDF
-export const btnLimpiar = document.getElementById('btnLimpiar');
+export let contenedor_visualizador = document.getElementById('Seccion_Visualizador');
 
-// Contenedor para mostrar el archivo PDF
-export const Visualizador = document.getElementById('Visualizador');
+// Seccion Botones
+export let btn_almacenador = document.getElementById('Btn_Almacenado')
+export let btn_visualizador = document.getElementById('Btn_Visualizador')
+
+export let btn_enviar = document.getElementById('btnEnviar')
+
+export let btn_mostrar = document.getElementById('btnMostrar')
+export let btn_limpiar = document.getElementById('btnLimpiar')
+
+// Elementos
+export let input_visualizador = document.getElementById('nombrePDF');

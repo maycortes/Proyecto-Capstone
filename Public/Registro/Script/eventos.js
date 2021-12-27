@@ -1,13 +1,18 @@
-// Se importa los identificadores de los botones
-import { btnEnviar , btnMostrar , btnLimpiar } from './identificadores.js';
-// Se importa las funcionaes para los botones
-import { crearArchivoPDF , buscarArchivoPDF } from './funciones.js'
+import * as funciones from './funciones.js'
+import * as ids from './identificadores.js'
 
-// Evento para el boton enviar formulario de usuario a servidor
-btnEnviar.addEventListener( 'click' ,  crearArchivoPDF );
+// Eventos para los botones
+ids.btn_almacenador.addEventListener( 'click' , funciones.mostrarSeccion );
+ids.btn_visualizador.addEventListener( 'click' , funciones.mostrarSeccion );
 
-btnMostrar.addEventListener( 'click' , buscarArchivoPDF );
+ids.btn_enviar.addEventListener( 'click' , funciones.enviarFormularioUsuario )
 
-btnLimpiar.addEventListener( 'click' , () => {
-    alert( 'Presionaste Limpiar' );
-});
+ids.btn_mostrar.addEventListener( 'click' , funciones.obtenerPDFAlmacenado)
+ids.btn_limpiar.addEventListener( 'click' , funciones.limpiarSeccionVisualizador )
+
+// Eventos para los labels
+for( let i = 0 ; i < 13 ; i++ ){
+    ids.seccion_almacenador.addEventListener( 'keyup' , funciones.moverLabel )
+}
+
+ids.input_visualizador.addEventListener( 'keyup' , funciones.moverLabel )

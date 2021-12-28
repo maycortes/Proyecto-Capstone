@@ -111,7 +111,7 @@ exports.controlAccesoSalida = async function( req , res ){
         if (salida.length == 1) {
             let { insercion } = await ConsultasSQL.almacenarSalida(req.body.id);
             ++numeroVisitantes;
-            res.send( JSON.stringify({ acceso: true, data: consulta[0] }) );
+            res.send( JSON.stringify({ acceso: true, data: "Este es el usuario" }) );
             return;
         }
         res.send(JSON.stringify({ acceso: false , data : "El usuario o QR mostrado no esta registrado" }));

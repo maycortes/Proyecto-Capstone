@@ -79,35 +79,45 @@ exports.permitirAccesoPaginas = async function (req, res) {
 }
 // Numero de visitantes dentro del hopital
 let numeroVisitantes = 3;
-// Funcion que permite indicar el control de acceso
-exports.controlAcceso = async function (req, res) {
+// Funcion que permite indicar el control de acceso de Entrada
+exports.controlAccesoEntrada = async function( req , res ){
     try {
-        let tipoAcceso = req.body.acceso;
         let consulta = await ConsultasSQL.consultarUsuario(req.body.id);
         if (consulta.length > 0) {
-            if (tipoAcceso == "Entrada") {
-                let entrada = await ConsultasSQL.consultarEntrada(req.body.id);
-                if (entrada.length <= 0 && numeroVisitantes > 0) {
+            let entrada = await ConsultasSQL.consultarEntrada(req.body.id);
+            if (entrada.length <= 0) {
+                if( numeroVisitantes > 0 ){
                     let { insercion } = await ConsultasSQL.almacenarEntrada(req.body.id);
                     --numeroVisitantes;
-                    res.send(JSON.stringify(insercion ? { acceso: true, data: consulta[0] } : { acceso: false }));
+                    res.send( JSON.stringify({ acceso: true, data: consulta[0]}) );
                     return;
                 }
+                res.send( JSON.stringify({ acceso: false, data: 'Espere por favor, el hispital ya esta lleno' }) );
+                return;
             }
-            if (tipoAcceso == "Salida") {
-                let salida = await ConsultasSQL.consultarSalida(req.body.id);
-                if (salida.length == 1) {
-                    let { insercion } = await ConsultasSQL.almacenarSalida(req.body.id);
-                    ++numeroVisitantes;
-                    res.send(JSON.stringify(insercion ? { acceso: true, data: consulta[0] } : { acceso: false }));
-                    return;
-                }
-            }
+            res.send(JSON.stringify({ acceso : false , data : 'El usuario ya tiene un ingreso este dia' }));
+            return;
         }
-        res.send(JSON.stringify({ acceso: false }));
+        res.send(JSON.stringify({ acceso : false , data : 'El usuario o QR mostrado no esta registrado' }));
     } catch (error) {
         console.log(error);
-        res.send(JSON.stringify({ acceso: false }));
+        res.send(JSON.stringify({ acceso: false , data : "Ocurrio un error en el servidor, espere por favor" }));
+    }
+}
+// Funcion que permite indicar el control de acceso de Entrada
+exports.controlAccesoSalida = async function( req , res ){
+    try {
+        let salida = await ConsultasSQL.consultarSalida(req.body.id);
+        if (salida.length == 1) {
+            let { insercion } = await ConsultasSQL.almacenarSalida(req.body.id);
+            ++numeroVisitantes;
+            res.send( JSON.stringify({ acceso: true, data: consulta[0] }) );
+            return;
+        }
+        res.send(JSON.stringify({ acceso: false , data : "El usuario o QR mostrado no esta registrado" }));
+    } catch (error) {
+        console.log(error);
+        res.send(JSON.stringify({ acceso: false , data : "Ocurrio un error en el servidor, espere por favor" }));
     }
 }
 // Funcion que permite crear un archivo PDF

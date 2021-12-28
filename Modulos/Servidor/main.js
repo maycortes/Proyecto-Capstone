@@ -45,7 +45,8 @@ app.post('/CrearPDF', funcion.crearPDF);
 // Mostrar archivo PDF
 app.post('/MostrarPDF', funcion.mostrarPDF);
 // Control de Acceso
-app.post('/ControlAcceso', funcion.controlAcceso);
+app.post('/ControlAccesoEntrada', funcion.controlAccesoEntrada);
+app.post('/ControlAccesoSalida', funcion.controlAccesoSalida);
 
 // Pagina para la Sala de Videollamada
 app.use('/ArchivosSala', express.static( path.join( process.cwd() , 'Public' , 'Sala' ) ));

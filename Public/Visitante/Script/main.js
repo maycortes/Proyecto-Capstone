@@ -1,15 +1,12 @@
 import QrScanner from "/ModuloScannerQR/qr-scanner.min.js";
 QrScanner.WORKER_PATH = '/ModuloScannerQR/qr-scanner-worker.min.js';
 
-import { crearSala } from '/ArchivosVisitante/Script/funciones.js'
+import * as ids from './identificadores.js'
+import * as funciones from './funciones.js'
 
-const video = document.getElementById('qr-video');
-const camList = document.getElementById('cam-list');
-
-const scanner = new QrScanner(video, result => {
-    crearSala( JSON.parse(result) );
+const scanner = new QrScanner(ids.video, result => {
+    funciones.crearSala( result );
     scanner.stop();
-    setTimeout( () => scanner.start() , 5000 );
 }, error => {
     console.log( error );
 });
@@ -19,15 +16,16 @@ scanner.start().then(() => {
         const option = document.createElement('option');
         option.value = camera.id;
         option.text = camera.label;
-        camList.add(option);
+        ids.camList.add(option);
     }));
-    let lector = document.getElementById("Lector");
-    lector.appendChild( scanner.$canvas );
+    document.getElementById("Lector").appendChild( scanner.$canvas );
 });
 
 // for debugging
 window.scanner = scanner;
 
-camList.addEventListener('change', event => {
+ids.camList.addEventListener('change', event => {
     scanner.setCamera(event.target.value);
 });
+
+ids.socket.on( 'recibirDatos' , funciones.recibirDatos );

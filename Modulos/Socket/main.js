@@ -27,10 +27,10 @@ io.on('connection' , (socket) => {
 				io.sockets.emit( 'agregarSala' , Sala );
 				socket.emit('recibirDatos' , {  acceso : true , data : generarDatosVisitante( consulta[0] , urlSala ) } );
 			}else{
-				socket.emit('recibirDatos' , { acceso : false , data : "Codigo QR no valido"} );
+				socket.emit('recibirDatos' , { acceso : false , data : "El usuario no esta registrado en el sistema"} );
 			}
 		}else{
-			socket.emit('recibirDatos' , { acceso : false , data : "Codigo QR no valido"} );
+			socket.emit('recibirDatos' , { acceso : false , data : "Codigo QR no valido para este sistema"} );
 		}
 	});
 

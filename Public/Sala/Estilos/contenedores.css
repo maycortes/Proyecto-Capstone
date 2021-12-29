@@ -2,8 +2,8 @@
   --color_controles: #111111f8;
   --sombra_controles: #1f1f1f83;
   --fondo-secciones: rgb(41, 41, 41);
-  --color_mensaje_familiar: #02442d;
-  --color_mensaje_paciente: #255747;
+  --color_mensaje_familiar: #333F50;
+  --color_mensaje_paciente: #607188;
 }
 
 body{

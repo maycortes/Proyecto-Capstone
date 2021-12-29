@@ -66,6 +66,11 @@ function obtenerAcceso( dato ) {
         let acceso = document.getElementById('acceso');
         acceso.action = dato.url;
         acceso["codigo"].value = dato.codigo;
+        mensanje.style.display = 'none';
+        ingresar.style.display = null;
+        for( let i = 0 ; i < 3 ; i++ ){
+            form[i].value = "";
+        }
         acceso.submit();
     }else{
         mensanje.style.display = 'none';

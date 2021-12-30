@@ -6,11 +6,29 @@
 body{
     margin: 0px;
     padding: 0px;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-rows: auto auto;
+    font-family: sans-serif;
+}
+
+#Encabezado{
+    width: 100%;
+    background-color: var(--color_sala);
+}
+
+#Encabezado > div{
+    margin-left: 30px;
+    color: aliceblue;
+    line-height: 2.5;
+    font-size: 25px;
+    font-weight: 520;
 }
 
 #Inicio{
     width: 100vw;
-    height: 100vh;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(4,25%);
     grid-auto-rows: 320px;
@@ -56,8 +74,8 @@ body{
 #MensajeAviso{
     color: #747474;
     text-align: center;
-    font-size: 120%;
-    font-weight: 900;
+    font-size: 100%;
+    font-weight: 700;
     grid-column: 2 / span 2;
     padding: 5%;
 }

@@ -107,14 +107,19 @@ exports.controlAccesoEntrada = async function( req , res ){
 // Funcion que permite indicar el control de acceso de Entrada
 exports.controlAccesoSalida = async function( req , res ){
     try {
-        let salida = await ConsultasSQL.consultarSalida(req.body.id);
-        if (salida.length == 1) {
-            let { insercion } = await ConsultasSQL.almacenarSalida(req.body.id);
-            ++numeroVisitantes;
-            res.send( JSON.stringify({ acceso: true, data: "Este es el usuario" }) );
+        let consulta = await ConsultasSQL.consultarUsuario(req.body.id);
+        if (consulta.length > 0) {
+            let salida = await ConsultasSQL.consultarSalida(req.body.id);
+            if (salida.length == 1) {
+                let { insercion } = await ConsultasSQL.almacenarSalida(req.body.id);
+                ++numeroVisitantes;
+                res.send( JSON.stringify({ acceso: true, data: consulta[0] }) );
+                return;
+            }
+            res.send(JSON.stringify({ acceso: false , data : "El usuario no registro su entrada o ya habia registrado su salida" }));
             return;
         }
-        res.send(JSON.stringify({ acceso: false , data : "El usuario o QR mostrado no esta registrado" }));
+        res.send(JSON.stringify({ acceso : false , data : 'El usuario mostrado no esta registrado' }));
     } catch (error) {
         console.log(error);
         res.send(JSON.stringify({ acceso: false , data : "Ocurrio un error en el servidor, espere por favor" }));

@@ -79,6 +79,7 @@ exports.almacenarEntrada = async function ( id ){
             return { insercion : true } 
         })
         .catch(error => { 
+            console.log(error);
             pool.end();
             return { insercion : false } 
         });
@@ -95,6 +96,7 @@ exports.consultarSalida = async function ( id ){
     })
     .catch(error => {
         pool.end();
+        console.log(error);
     });
 }
 

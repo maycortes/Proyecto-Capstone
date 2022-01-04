@@ -3,144 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/ArchivosRegistro/Estilos/Contenedores.css">
+    <link rel="stylesheet" href="/ArchivosRegistro/Estilos/Efectos.css">
+    <link rel="stylesheet" href="/ArchivosRegistro/Estilos/Elementos.css">
 </head>
 <body>
-    <div id="Inicio">
-        <div id="Menu">
-            <div id="Registrar"> <div id="Contenedor_btn">Registrar</div> </div>
-            <div id="Visualizar"> <div id="Contenedor_btn">Mostrar PDF</div> </div>
-        </div>
-        <form id="Pagina_Registrar">
-            <!-- *************************************************************************** -->
-            <div id="Seccion_Familiar">
-                <div id="Formulario_Familiar">
-                    <div class="ContenedorTriple">
-                        <div class="Titulo"> Datos del Familiar </div>
-                    </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="nombreF" id="nombreF" required>
-                            <label for="nombreF">Nombre(s) del Familiar</label>
-                        </div>
-                    </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="apellido1F" id="apellido1F" required>
-                            <label for="apellido1F">Primer Apellido del Familiar</label>
-                        </div>
-                    </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="apellido2F" id="apellido2F" required>
-                            <label for="apellido2F">Segundo Apellido del Familiar</label>
-                        </div>
-                    </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="telefono1" id="telefono1" required>
-                            <label for="telefono1">Telefono 1</label>
-                        </div>
-                    </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="telefono2" id="telefono2" required>
-                            <label for="telefono2">Telefono 2</label>
-                        </div>
-                    </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="correo" id="correo" required>
-                            <label for="correo">Correo Electronico</label>
-                        </div>
-                    </div>
-                    <div class="ContenedorTriple">
-                        <div class="ElementosInput">
-                            <input type="text" name="direccion" id="direccion" required>
-                            <label for="direccion">Dirección de Domicilio</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- *************************************************************************** -->
+    <!-- Seccion de Encabezado -->
+    <div id="Encabezado">
+        <div> <div id="Titulo_Encabezado">Registro</div> </div>
+        <div> <div id="Btn_Almacenado">Almacenador</div> </div>
+        <div> <div id="Btn_Visualizador">Visualizador</div> </div>
+    </div>
+    <!-- Seccion Para almacenar los datos -->
+    <form id="Almacenador">
+        <div>
             <div id="Seccion_Paciente">
-                <div id="Formulario_Paciente">
-                    <div class="ContenedorTriple">
-                        <div class="Titulo"> Datos del Paciente </div>
+                <div class="Encabezado_Seccion"> <div>DATOS DEL PACIENTE</div> </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="nombrePac" name="nombrePac">
+                        <label for="nombrePac" class="titulo_label_abajo">Nombre(s) del Paciente: </label>
                     </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="nombreP" id="nombreP" required>
-                            <label for="nombreP">Nombre(s) del Paciente</label>
-                        </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="apellido1Pac" name="apellido1Pac">
+                        <label for="apellido1Pac" class="titulo_label_abajo">Primer Apellido del Paciente: </label> 
                     </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="apellido1P" id="apellido1P" required>
-                            <label for="apellido1P">Primer Apellido del Paciente</label>
-                        </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="apellido2Pac" name="apellido2Pac">
+                        <label for="apellido2Pac" class="titulo_label_abajo">Segundo Apellido del Paciente: </label> 
                     </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="apellido2P" id="apellido2P" required>
-                            <label for="apellido2P">Segundo Apellido del Paciente</label>
-                        </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="nss" name="nss">
+                        <label for="nss" class="titulo_label_abajo">NSS: </label>
                     </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="NSS" id="NSS" required>
-                            <label for="NSS">NSS</label>
-                        </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="numeroCama" name="numeroCama">
+                        <label for="numeroCama" class="titulo_label_abajo">Numero de Cama: </label> 
                     </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="numeroCama" id="numeroCama" required>
-                            <label for="numeroCama">No. Cama</label>
-                        </div>
-                    </div>
-                    <div class="ContenedoresInput">
-                        <div class="ElementosInput">
-                            <input type="text" name="numeroPiso" id="numeroPiso" required>
-                            <label for="numeroPiso">No. Piso</label>
-                        </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="numeroPiso" name="numeroPiso">  
+                        <label for="numeroPiso" class="titulo_label_abajo">Numero de piso: </label> 
                     </div>
                 </div>
             </div>
-            <!-- *************************************************************************** -->
-            <div id="Seccion_Enviar">
-                <div id="Contenedor_Btn_Enviar">
-                    <button type="button" id="Enviar">Enviar</button>
-                    <div id="Mensaje_Espera" style="display: none;"> Espere ... </div>
+        </div>
+        <div>
+            <div id="Seccion_Visitante">
+                <div class="Encabezado_Seccion"> <div>DATOS DEL VISITANTE</div> </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="nombreVis" name="nombreVis">
+                        <label for="nombreVis" class="titulo_label_abajo">Nombre(s) del Visitante: </label> 
+                    </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="apellido1Vis" name="apellido1Vis">
+                        <label for="apellido1Vis" class="titulo_label_abajo">Primer Apellido del Visitante: </label> 
+                    </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="apellido2Vis" name="apellido2Vis">
+                        <label for="apellido2Vis" class="titulo_label_abajo">Segundo Apellido del Visitante: </label> 
+                    </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="telefono1" name="telefono1">
+                        <label for="telefono1" class="titulo_label_abajo">Telefono 1: </label> 
+                    </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="text" id="telefono2" name="telefono2">
+                        <label for="telefono2" class="titulo_label_abajo">Telefono 2: </label> 
+                    </div>
+                </div>
+                <div>
+                    <div class="Contenedor_Input">
+                        <input type="email" id="correo" name="correo">
+                        <label for="correo" class="titulo_label_abajo">Correo: </label> 
+                    </div>
+                </div>
+                <div style="grid-column: span 3;">
+                    <div class="Contenedor_Input">
+                        <input type="text" id="direccion" name="direccion">  
+                        <label for="direccion" class="titulo_label_abajo">Direccion: </label> 
+                    </div>
                 </div>
             </div>
-        </form>
-        <!-- *************************************************************************************** -->
-        <div id="Pagina_Visualizar" style="display: none;">
-            <div id="Seccion_Buscar">
-                <div class="ContenedorTriple">
-                    <div class="Titulo"> Buscar PDF </div>
-                </div>
-                <div class="ContenedoresInput">
-                    <div class="ElementosInput">
-                        <input type="text" name="nombrePDF" id="nombrePDF" required>
-                        <label for="nombrePDF">Ingrese el nombre del PDF</label>
-                    </div>
-                </div>
-                <div id="Contenedor_Buscar">
-                    <div id="Contenedor_Btn_Buscar">
-                        <button type="button" id="Buscar">Buscar</button>
-                    </div>
-                </div>
-                <div id="Contenedor_Limpiar">
-                    <div id="Contenedor_Btn_Limpiar">
-                        <button type="button" id="Limpiar">Limpiar</button>
-                    </div>
-                </div>
+        </div>
+        <div>
+            <div class="Seccion_Boton">
+                <button id="btnEnviar" type="button">Enviar</button>
+                <div id="Mensaje_Espera" style="display: none;"> <div id="spinner"></div> </div>
             </div>
-            <!-- *************************************************************************************** -->
-            <div id="Seccion_Documento_PDF"> </div>
+        </div>
+    </form>
+    <!-- Seccion para el Visualizador de PDFs -->
+    <div id="Visualizador" style="display: none;">
+        <div id="Contenedor_Visualizador">
+            <div> <div id="Titulo_Visualizador"> Visualizador </div> </div>
+            <div> 
+                <div id="Contenedor_Buscador">
+                    <div>
+                        <div class="Contenedor_Input">
+                            <input type="text" id="nombrePDF" name="nombrePDF">
+                            <label for="nombrePDF" class="titulo_label_abajo">Nombre del PDF</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="Contenedor_Boton"> <button id="btnMostrar" type="button">Mostrar</button> </div>
+                    </div>
+                    <div>
+                        <div class="Contenedor_Boton"> <button id="btnLimpiar" type="button">Limpiar</button> </div>
+                    </div>
+                </div> 
+            </div>
+            <div>
+                <div id="Seccion_Visualizador"></div>
+            </div>
         </div>
     </div>
-    <script src="./main.js"></script>
 </body>
+<script src="/ArchivosRegistro/Script/eventos.js" type="module"></script>
 </html>

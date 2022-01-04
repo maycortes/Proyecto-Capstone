@@ -1,22 +1,23 @@
 {
-  "name": "Proyecto-Capstone",
+  "name": "Proyecto-Capstone2.0.0",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "node ./Modulos/socket.js"
+    "start": "node main.js",
+    "dev": "node ./Modulos/Servidor/main",
+    "soc": "node ./Modulos/Socket/main"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "fs": "^0.0.1-security",
-    "html-pdf": "^3.0.1",
     "https": "^1.0.0",
-    "path": "^0.12.7",
+    "mariadb": "^2.5.5",
+    "pdfkit": "^0.13.0",
     "qr-scanner": "^1.3.0",
     "qrcode": "^1.4.4",
-    "socket.io": "^4.3.2"
+    "socket.io": "^4.4.0"
   }
 }

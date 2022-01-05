@@ -1,8 +1,9 @@
 # Instalacion de MariaDB
-
+``
 sudo apt update
 sudo apt upgrade
 sudo apt install mariadb-server
+``
 
 # Configuracion de Acceso root
 

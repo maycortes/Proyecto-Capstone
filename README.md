@@ -42,4 +42,4 @@ Crear un sistema de control de acceso para un hospital utilizando códigos QR y 
 
 ## Video Introductorio
 
-![](https://github.com/JoseEduardoUAM/ESP32CAM_SICUAMG2/blob/main/Imagenes/ESP32CAM_FTDI.png)
+![](https://www.youtube.com/watch?v=TGwgfJ-IZqs&ab_channel=FrancoEscamilla)

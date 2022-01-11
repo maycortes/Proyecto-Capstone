@@ -42,4 +42,4 @@ Crear un sistema de control de acceso para un hospital utilizando códigos QR y 
 
 ## Video Introductorio
 
-![](https://www.youtube.com/watch?v=TGwgfJ-IZqs&ab_channel=FrancoEscamilla)
+[![](https://img.youtube.com/vi/avR4WsJEblk/hqdefault.jpg)](https://youtu.be/avR4WsJEblk)

@@ -1,3 +1,5 @@
 
 sudo mysql -u root -p <bd.sql
-sudo mysql -u root -p <
+sudo mysql -u root -p <insercion.sql
+sudo -u root -p -e "show databases"
+sudo -u root -p -e "use hospital; show tables;"

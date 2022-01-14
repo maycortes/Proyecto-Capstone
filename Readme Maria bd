@@ -1,7 +1,6 @@
 
 sudo mysql -u root -p <bd.sql
 
-![alt text](https://github.com/maycortes/Proyecto-Capstone/blob/master/imagenes/02.gif)
 
 sudo mysql -u root -p <insercion.sql
 

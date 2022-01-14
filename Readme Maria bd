@@ -1,10 +1,15 @@
-
+#Instalaciòn de archivo bd.sql
+...
 sudo mysql -u root -p <bd.sql
 
-
+#Instalación de archivo inserción.sql
+...
 sudo mysql -u root -p <insercion.sql
 
-
+#Comprobación de elementos
+...
 sudo -u root -p -e "show databases"
 
+#Uso de la tabla Hospital y mostrar las tablas con las que vamos a trabajar
+...
 sudo -u root -p -e "use hospital; show tables;"

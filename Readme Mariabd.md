@@ -18,7 +18,7 @@ sudo -u root -p -e "show databases"
 
 ![](./imagenes/03.gif)
 
-## Uso de la tabla Hospital y mostrar las tablas que conforman nuetsro proyecto 
+## Uso de la tabla Hospital y Muestra de las tablas que conforman nuestro proyecto 
 ...
 sudo -u root -p -e "use hospital; show tables;"
 

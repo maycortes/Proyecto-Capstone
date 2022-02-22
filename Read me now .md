@@ -36,7 +36,7 @@ También se debe considerar que hay aplicaciones como Zoom que limitan el tiempo
 
 El proyecto que se propone permitiría realizar una videollamada privada entre paciente y familiar sin la necesidad de contar con un proveedor de acceso a internet, sin la necesidad de depender de una aplicación de terceros y permitiendo tener un sistema de comunicación de bajos recursos que pueda utilizar dispositivos móviles, tales como smartphone, tabletas o computadoras sin interferir con la infraestructura de comunicaciones del hospital.
 
-#Bibliografía #
+# Bibliografía #
 [1] V. M. Torres Mesa, “Publirreportaje”, Personal médico y covid 19, No. 3, pp. 22-24, julio-septiembre 2020, [En línea], Disponible en: https://salud.edomex.gob.mx/cevece/documentos/revistas/rcercati/revista20_3.pdf 
 
 [2] Fazt, “Real Time Web | Aplicaciones Web en tiempo Real, Websockets, WebRTC, Ajax, Polling, Long Polling”, YouTube , 20 de marzo del 2018, [Video en línea]: https://www.youtube.com/watch?v=2FSr-Ezbf1w&ab_channel=FaztFaztVerificada 

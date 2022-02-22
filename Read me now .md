@@ -36,6 +36,28 @@ También se debe considerar que hay aplicaciones como Zoom que limitan el tiempo
 
 El proyecto que se propone permitiría realizar una videollamada privada entre paciente y familiar sin la necesidad de contar con un proveedor de acceso a internet, sin la necesidad de depender de una aplicación de terceros y permitiendo tener un sistema de comunicación de bajos recursos que pueda utilizar dispositivos móviles, tales como smartphone, tabletas o computadoras sin interferir con la infraestructura de comunicaciones del hospital.
 
+# Objetivo general #
+Crear un sistema de control de acceso para un hospital utilizando códigos QR y un sistema de videollamadas para uso de visitantes-pacientes.
+
+# Objetivo Especificos #
+
+-	Instalar y configurar un servidor que permita proveer las páginas de cada módulo y la conexión con la base de datos.
+-	
+-	Diseñar e implementar un módulo que registre la entrada de un visitante mediante el uso de un código QR.
+-	
+-	Diseñar e implementar un módulo que registre la salida de un visitante mediante el uso de un código QR.
+-	
+-	Diseñar e implementar un módulo que permita crear una sala de videollamada privada con los datos del paciente y del familiar mediante el uso de un código QR.
+-	
+-	Diseñar e implementar un módulo que permita registrar a un paciente y al visitante en la Base de Datos.
+-	
+-	Diseñar e implementar un módulo para proporcionar el PDF con los datos del paciente, visitante y código QR generado por el servidor.
+-	
+-	Diseñar una Base de Datos para registrar los datos del paciente y del visitante.
+
+
+
+
 # Bibliografía #
 [1] V. M. Torres Mesa, “Publirreportaje”, Personal médico y covid 19, No. 3, pp. 22-24, julio-septiembre 2020, [En línea], Disponible en: https://salud.edomex.gob.mx/cevece/documentos/revistas/rcercati/revista20_3.pdf 
 

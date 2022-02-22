@@ -42,17 +42,11 @@ Crear un sistema de control de acceso para un hospital utilizando códigos QR y 
 # Objetivo Especificos #
 
 -	Instalar y configurar un servidor que permita proveer las páginas de cada módulo y la conexión con la base de datos.
--	
--	Diseñar e implementar un módulo que registre la entrada de un visitante mediante el uso de un código QR.
--	
+-	Diseñar e implementar un módulo que registre la entrada de un visitante mediante el uso de un código QR
 -	Diseñar e implementar un módulo que registre la salida de un visitante mediante el uso de un código QR.
--	
 -	Diseñar e implementar un módulo que permita crear una sala de videollamada privada con los datos del paciente y del familiar mediante el uso de un código QR.
--	
 -	Diseñar e implementar un módulo que permita registrar a un paciente y al visitante en la Base de Datos.
--	
 -	Diseñar e implementar un módulo para proporcionar el PDF con los datos del paciente, visitante y código QR generado por el servidor.
--	
 -	Diseñar una Base de Datos para registrar los datos del paciente y del visitante.
 
 
